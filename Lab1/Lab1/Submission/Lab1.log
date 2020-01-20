@@ -1,0 +1,48 @@
+﻿Build started 1/14/2020 1:09:44 PM.
+     1>Project "C:\Users\sandipsa\Downloads\Lab1\Lab1\Lab1.vcxproj" on node 2 (Rebuild target(s)).
+     1>CudaClean:
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmp4e7c0449a755420ab90f921e98efcfe9.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile      -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Downloads\Lab1\Lab1\kernel.cu" -clean
+         
+         C:\Users\sandipsa\Downloads\Lab1\Lab1>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile      -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Downloads\Lab1\Lab1\kernel.cu" -clean 
+         kernel.cu
+       AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DWIN64 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c C:\Users\sandipsa\Downloads\Lab1\Lab1\kernel.cu 
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmpa7f04a0c2f07489ebae325b8ab6b889b.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Downloads\Lab1\Lab1\kernel.cu"
+         
+         C:\Users\sandipsa\Downloads\Lab1\Lab1>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Downloads\Lab1\Lab1\kernel.cu" 
+         kernel.cu
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sandipsa\Downloads\Lab1\Submission\Lab1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" wb.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sandipsa\Downloads\Lab1\Submission\Lab1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sandipsa\Downloads\Lab1\Submission\Lab1.lib" /MACHINE:X64 Submission\kernel.cu.obj
+     1>wb.lib(wbArg.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbArg.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbExit.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbExit.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbExport.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbExport.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbFile.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbFile.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbImage.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbImage.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbImport.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbImport.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbInit.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbInit.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbLogger.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbLogger.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbPPM.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbPPM.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbSolution.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbSolution.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbTimer.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbTimer.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(json11.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(json11.obj)' or at 'C:\Users\sandipsa\Downloads\Lab1\Submission\vc120.pdb'; linking object as if no debug info
+         Lab1.vcxproj -> C:\Users\sandipsa\Downloads\Lab1\Submission\Lab1.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Downloads\Lab1\Submission\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Downloads\Lab1\Submission\"
+         echo copy "C:\Users\sandipsa\Downloads\Lab1\Lab1\\kernel.cu" "C:\Users\sandipsa\Downloads\Lab1\Submission\"
+         copy "C:\Users\sandipsa\Downloads\Lab1\Lab1\\kernel.cu" "C:\Users\sandipsa\Downloads\Lab1\Submission\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Downloads\Lab1\Submission\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64_75.dll
+                 1 file(s) copied.
+         copy "C:\Users\sandipsa\Downloads\Lab1\Lab1\\kernel.cu" "C:\Users\sandipsa\Downloads\Lab1\Submission\"
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\sandipsa\Downloads\Lab1\Lab1\Lab1.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.52
