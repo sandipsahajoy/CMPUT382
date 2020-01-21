@@ -54,7 +54,7 @@ void test4()
     printf("%d",a[1][1]);
 }
 
-//incorrect if statement
+//incorrect pinter dereferencing at if statement
 void test5()
 {
     int *a = (int*) malloc(sizeof(int));
