@@ -1,0 +1,1 @@
+https://dhruba.wordpress.com/2012/08/16/opencl-cookbook-building-a-program-and-debugging-failures/
