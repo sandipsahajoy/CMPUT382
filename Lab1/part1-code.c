@@ -24,7 +24,7 @@ void test2()
     *a = 2;
     *b = 3;
     printf("%d\n%d",*a,*b);
-} 
+}
 
 //incorrect allocation of memory for 1000 int
 void test3()
@@ -39,20 +39,20 @@ void test3()
     {
         *(i+a)=i;
         printf("%d\n",*(i+a));
-    }    
+    }
 }
 
 //incorrect dynamically allocated a 2D array
 void test4()
 {
     int **a = (int**) malloc(3 * sizeof(int*));
-    for (int i=0; i<3; i++) 
+    for (int i=0; i<3; i++)
     {
         a[i] = (int*)malloc(100 * sizeof(int));
     }
     a[1][1] = 5;
     printf("%d",a[1][1]);
-} 
+}
 
 //incorrect if statement
 void test5()
@@ -62,7 +62,8 @@ void test5()
     if (!*a)
     {
         printf("Value is 0\n");
-}   }
+    }
+}
 
 void main()
 {
