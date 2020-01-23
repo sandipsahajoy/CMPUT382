@@ -1,0 +1,31 @@
+﻿Build started 1/21/2020 3:07:07 PM.
+     1>Project "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\VectorAdd.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DLAB_DEBUG /DWIN32 /DWIN64 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c C:\Users\sandipsa\Desktop\Lab2\VectorAdd\kernel.cu 
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmpbbbe5d338c794df49f602efe51fe15b4.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DLAB_DEBUG -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\kernel.cu"
+         
+         C:\Users\sandipsa\Desktop\Lab2\VectorAdd>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DLAB_DEBUG -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\kernel.cu" 
+         kernel.cu
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sandipsa\Desktop\Lab2\Debug\VectorAdd.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" wb.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sandipsa\Desktop\Lab2\Debug\VectorAdd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sandipsa\Desktop\Lab2\Debug\VectorAdd.lib" /MACHINE:X64 Debug\kernel.cu.obj
+         VectorAdd.vcxproj -> C:\Users\sandipsa\Desktop\Lab2\Debug\VectorAdd.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab2\Debug\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab2\Debug\"
+         echo copy "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\\kernel.cu" "C:\Users\sandipsa\Desktop\Lab2\Debug\\vecAdd_kernel.cu"
+         copy "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\\kernel.cu" "C:\Users\sandipsa\Desktop\Lab2\Debug\\vecAdd_kernel.cu"
+         
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab2\Debug\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64_75.dll
+                 1 file(s) copied.
+         copy "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\\kernel.cu" "C:\Users\sandipsa\Desktop\Lab2\Debug\\vecAdd_kernel.cu"
+                 1 file(s) copied.
+     1>Done Building Project "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\VectorAdd.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:12.11

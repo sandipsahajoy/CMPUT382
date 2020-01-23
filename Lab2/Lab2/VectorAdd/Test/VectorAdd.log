@@ -1,0 +1,152 @@
+﻿Build started 1/21/2020 3:50:13 PM.
+     1>Project "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\VectorAdd.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DWIN64 /DNDEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c C:\Users\sandipsa\Desktop\Lab2\VectorAdd\kernel.cu 
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmp5926668cc983448baee437e191f12b8d.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Test -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD " -o Test\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\kernel.cu"
+         
+         C:\Users\sandipsa\Desktop\Lab2\VectorAdd>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Test -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD " -o Test\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\kernel.cu" 
+         kernel.cu
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe" /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" wb.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.lib" /MACHINE:X64 Test\kernel.cu.obj
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         VectorAdd.vcxproj -> C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab2\Test\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab2\Test\"
+         
+         set TEST_DIR=C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\
+         set APP=C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe
+         
+         DEL /S %TEST_DIR%*myOutput.raw
+         
+         echo Vector Add Testing Test 0...
+         set TEST=%TEST_DIR%0\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 1...
+         set TEST=%TEST_DIR%1\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error
+         
+         echo Vector Add Testing Test 2...
+         set TEST=%TEST_DIR%2\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 3...
+         set TEST=%TEST_DIR%3\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 4...
+         set TEST=%TEST_DIR%4\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 5...
+         set TEST=%TEST_DIR%5\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 6...
+         set TEST=%TEST_DIR%6\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 7...
+         set TEST=%TEST_DIR%7\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 8...
+         set TEST=%TEST_DIR%8\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         
+         echo Vector Add Testing Test 9...
+         set TEST=%TEST_DIR%9\
+         
+         echo %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector
+         %APP% -e %TEST%output.raw -i %TEST%input0.raw,%TEST%input1.raw -o %TEST%myOutput.raw -t vector >NUL
+         
+         FC %TEST%output.raw %TEST%myOutput.raw >NUL && Echo Same || Echo Different or error 
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab2\Test\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64_75.dll
+                 1 file(s) copied.
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\0\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\1\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\2\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\3\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\4\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\5\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\6\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\7\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\8\myOutput.raw
+         Deleted file - C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\9\myOutput.raw
+         Vector Add Testing Test 0...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\0\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\0\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\0\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\0\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 1...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\1\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\1\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\1\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\1\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 2...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\2\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\2\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\2\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\2\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 3...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\3\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\3\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\3\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\3\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 4...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\4\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\4\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\4\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\4\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 5...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\5\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\5\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\5\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\5\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 6...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\6\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\6\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\6\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\6\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 7...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\7\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\7\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\7\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\7\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 8...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\8\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\8\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\8\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\8\myOutput.raw -t vector
+         Same 
+         Vector Add Testing Test 9...
+         C:\Users\sandipsa\Desktop\Lab2\Test\VectorAdd.exe -e C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\9\output.raw -i C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\9\input0.raw,C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\9\input1.raw -o C:\Users\sandipsa\Desktop\Lab2\Dataset\VectorAdd\Test\9\myOutput.raw -t vector
+         Same 
+     1>Done Building Project "C:\Users\sandipsa\Desktop\Lab2\VectorAdd\VectorAdd.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.01

@@ -1,0 +1,17 @@
+//Sandip Saha Joy
+Assume that the input vectors to your program has length N. Answers for the following questions must be based on N.
+
+1. How many floating operations are being performed in your vector add kernel?
+Answer:
+
+2. How many global memory reads are being performed by your vector add kernel?
+Answer:
+
+3. How many global memory writes are being performed by your vector add kernel?
+Answer:
+
+4. In the vector add project, how many bytes are transferred from the Host to the Device?
+Answer: 32144
+
+5. In the vector add project, how many bytes are transferred from the Device to the Host?
+Answer: 16072
