@@ -1,17 +1,19 @@
 //Sandip Saha Joy
+
+
 Assume that the input vectors to your program has length N. Answers for the following questions must be based on N.
 
 1. How many floating operations are being performed in your vector add kernel?
-Answer:
+Answer: 1 floating operation is performed when a pair of input floating numbers are added. In the vector add kernel, if the input vectors have N length, N pairs of floating numbers are added, so N floating operations are performed. 
 
 2. How many global memory reads are being performed by your vector add kernel?
-Answer:
+Answer: 2N global memory reads are being performed by the vector add kernel since there are 2 input vectors of length N and read operation is performed from them.
 
 3. How many global memory writes are being performed by your vector add kernel?
-Answer:
+Answer: N global memory writes are being performed by the vector add kernel since there is 1 output vector of length N and write operation is performed on it.
 
 4. In the vector add project, how many bytes are transferred from the Host to the Device?
-Answer: 32144
+Answer: Since 2 float type input vectors of length N are copied from the Host(input memory) to the Device(GPU), # of bytes = 2N * size of float.
 
 5. In the vector add project, how many bytes are transferred from the Device to the Host?
-Answer: 16072
+Answer: Since 1 float type output vectors of length N is copied from the Device(GPU) to the Host(input memory), # of bytes = N * size of float.
