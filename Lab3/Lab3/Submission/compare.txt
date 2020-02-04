@@ -1,0 +1,2 @@
+// Sandip Saha Joy
+Binary search ran much faster than linear/sequential search, since runtime complexity of binary search is O(logn) whereas linear/sequential search is O(n)

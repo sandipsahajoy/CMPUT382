@@ -1,0 +1,22 @@
+// Sandip Saha Joy
+
+1. How many times is the binary search called? EXPLAIN. 
+Answer: Since there are 2 arrays(A & B) of length of N, so binary search is called 2N times.
+
+2. Does this algorithm in the current state work if A and B are not sorted? EXPLAIN. 
+Answer: This algorithm wont work if A and B are unsorted because the algorithm needs a sorted array to search. Binary search works by assuming the middle of the array contains the median value in the array. If it is not sorted, this assumption does not make sense, since the median can be anywhere and cutting the array in half could mean that you cut off the number you were searching for.
+
+3. What is the best-case complexity of a merge algorithm written on the CPU? EXPLAIN. 
+Answer: The best-case complexity of a merge algorithm written on the CPU to merge suppose 2 sorted arrays of size n1 and n2 would be O(n1+n2). That is, the best time complexity is O(n) to merge any number of sorted arrays in cpu.
+
+4. What common sorting algorithm could benefit from having a parallel merge? 
+Answer: Mergesort sorting algorithm could benefit from having a parallel merge.
+
+5. If arrays A and B don’t have unique elements or the intersect of A and B is not empty. Is there an issue with doing the exact same process with A as B or vice versa? If so what is the issue and how do you fix it? 
+Answer: Yes, there would be an issue like if there are duplicates, then both arrays A and B would try to put the duplicate element in the same index of C. We can fix this by not searching for the same value in one of the arrays.
+For example in the lab project:
+x = binarySearch(A[i], B, N);
+y = binarySearch(B[i]+1, A, N);
+C[i + x] = A[i];
+C[i + y] = B[i]; 
+Here, if B[i] is used instead of B[i]+1, then for duplicate case x would become equal to y and A[i] and B[i] will try to store value at the same index of C simultaneously, which would create an issue.
