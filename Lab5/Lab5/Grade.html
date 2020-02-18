@@ -1,0 +1,143 @@
+<html>
+<head>
+	<script src="Marks.js"></script>
+</head>
+<body>
+
+<script>
+function correct(json) {
+	var correct = -1;
+	json.forEach(function(obj, index) {
+		if (obj.type == "test") {
+			correct = obj.data.correctq;
+		}
+	});
+
+	return correct;
+}
+
+function printSection(section, total_percent) {
+	var sectionDiv = document.createElement('div');
+	var sectionTitle = document.createTextNode(section.Section); 
+	sectionDiv.appendChild(sectionTitle);
+
+	var tests = section.Tests;
+
+	var testsTable = document.createElement('table');
+	testsTable.style.cssText = 'cellpadding: 30;';
+
+	var num_passed = 0;
+
+	tests.forEach(function(test, index) {
+		var testRow = document.createElement('tr');
+
+		var testTitle = document.createElement('td');
+		testTitle.appendChild(document.createTextNode(test.Test + ": "));
+
+		var pass = document.createElement('td');
+		var isCorrect = correct(test.Output);
+
+		if (isCorrect === true) {
+			pass.appendChild(document.createTextNode("Pass"));
+			num_passed++;
+		} else if (isCorrect === false)
+			pass.appendChild(document.createTextNode("Fail"));
+		else
+			pass.appendChild(document.createTextNode("Error"));
+
+		testRow.appendChild(testTitle);
+		testRow.appendChild(pass);
+		testsTable.appendChild(testRow);
+	});
+
+	var testRow = document.createElement('tr');
+	var testPrecTitle = document.createElement('td');
+	testPrecTitle.appendChild(document.createTextNode("Grade: "));
+	var testPrec = document.createElement('td');
+
+	var percent = Math.round((num_passed/tests.length)*total_percent*10)/10;
+
+	testPrec.appendChild(document.createTextNode(percent));
+	testRow.appendChild(testPrecTitle);
+	testRow.appendChild(testPrec);
+	testsTable.appendChild(testRow);
+
+	sectionDiv.appendChild(testsTable);
+
+	window.document.body.appendChild(sectionDiv);
+	window.document.body.appendChild(document.createElement('br'));
+
+	return percent;
+}
+
+function getTestTime(json) {
+	var time = 0;
+	json.forEach(function(obj, index) {
+		if (obj.type == "timer") {
+			var data = obj.data;
+			if (data.kind == "Compute") {
+				time = data.elapsed_time;
+			}
+		}
+	});
+
+	return time;
+}
+
+function compareTime(json) {
+	var user = json.Tests[0];
+	var solution = json.Tests[1];
+
+	if (!(correct(user.Output) && correct(solution.Output)))
+		return -1;
+
+	var user_time = getTestTime(user.Output);
+	var solution_time = getTestTime(solution.Output);
+
+	if (user_time <= 0 || solution_time <= 0)
+		return -1;
+
+	return solution_time/user_time;
+}
+
+var timeStampDiv = document.createElement('div');
+var timeStampTitle = document.createTextNode("Marks last run at: " + timestamp); 
+timeStampDiv.appendChild(timeStampTitle);
+window.document.body.appendChild(timeStampDiv);
+
+var obj = JSON.parse(text);
+console.log(obj);
+
+var marks = obj.Marks;
+var p = printSection(marks[0], 80);
+p = Math.round(p*10)/10;
+var speedUp = -1;
+
+if (marks.length > 1) {
+	speedUp = compareTime(marks[1]);
+
+	if (speedUp >= 0.9)
+		p += 20;
+
+	speedUp = Math.floor(speedUp*100)/100;
+}
+
+var gradeDiv = document.createElement('div');
+if (marks.length > 1) {
+	var gradeTitle = document.createTextNode("Final Grade: " + p + "%");
+} else {
+	var gradeTitle = document.createTextNode("Final Grade: " + p + "% + 20% for Optimization"); 
+}
+gradeDiv.appendChild(gradeTitle);
+window.document.body.appendChild(gradeDiv);
+
+if (marks.length > 1) {
+	var speedUpDiv = document.createElement('div');
+	var speedUpTitle = document.createTextNode("Speed Up: " + speedUp); 
+	speedUpDiv.appendChild(speedUpTitle);
+	window.document.body.appendChild(speedUpDiv);
+}
+
+</script>
+</body>
+</html>

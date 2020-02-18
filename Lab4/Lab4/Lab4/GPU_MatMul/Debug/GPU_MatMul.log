@@ -1,0 +1,27 @@
+﻿Build started 2/5/2020 1:40:37 PM.
+     1>Project "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\GPU_MatMul.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DLAB_DEBUG /DWIN32 /DWIN64 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu 
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmp938ba0a1135c4acf88193f2e4e06e09e.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DLAB_DEBUG -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu"
+         
+         C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DLAB_DEBUG -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu" 
+         kernel.cu
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sandipsa\Desktop\Lab4\Debug\GPU_MatMul.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" wb.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sandipsa\Desktop\Lab4\Debug\GPU_MatMul.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sandipsa\Desktop\Lab4\Debug\GPU_MatMul.lib" /MACHINE:X64 Debug\kernel.cu.obj
+         GPU_MatMul.vcxproj -> C:\Users\sandipsa\Desktop\Lab4\Debug\GPU_MatMul.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart*.dll" "C:\Users\sandipsa\Desktop\Lab4\Debug\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart*.dll" "C:\Users\sandipsa\Desktop\Lab4\Debug\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart*.dll" "C:\Users\sandipsa\Desktop\Lab4\Debug\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart32_75.dll
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64_75.dll
+                 2 file(s) copied.
+     1>Done Building Project "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\GPU_MatMul.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.93

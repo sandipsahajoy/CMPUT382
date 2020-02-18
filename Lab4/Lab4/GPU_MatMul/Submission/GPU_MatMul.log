@@ -1,0 +1,38 @@
+﻿Build started 2/5/2020 5:50:41 PM.
+     1>Project "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\GPU_MatMul.vcxproj" on node 3 (Rebuild target(s)).
+     1>CudaClean:
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmp374213e347194f59b28d0de8fb0f574c.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile      -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu" -clean
+         
+         C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile      -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu" -clean 
+         kernel.cu
+       AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DWIN64 /DNDEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu 
+       CudaBuild:
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\sandipsa\AppData\Local\Temp\tmpa2519c394d8e445b9ec45b6938e5f49d.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu"
+         
+         C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"     --keep-dir x64\Submission -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /Zi  /MD " -o Submission\kernel.cu.obj "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu" 
+         kernel.cu
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sandipsa\Desktop\Lab4\Submission\GPU_MatMul.exe" /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\x64" wb.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sandipsa\Desktop\Lab4\Submission\GPU_MatMul.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sandipsa\Desktop\Lab4\Submission\GPU_MatMul.lib" /MACHINE:X64 Submission\kernel.cu.obj
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         GPU_MatMul.vcxproj -> C:\Users\sandipsa\Desktop\Lab4\Submission\GPU_MatMul.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab4\Submission\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab4\Submission\"
+         copy C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\kernel.cu C:\Users\sandipsa\Desktop\Lab4\Submission\GPU_MatMul.cu
+         DEL C:\Users\sandipsa\Desktop\Lab4\Submission\*.pdb
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64*.dll" "C:\Users\sandipsa\Desktop\Lab4\Submission\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\cudart64_75.dll
+                 1 file(s) copied.
+                 1 file(s) copied.
+         C:\Users\sandipsa\Desktop\Lab4\Submission\OPT_MatMul.pdb
+         The process cannot access the file because it is being used by another process.
+     1>Done Building Project "C:\Users\sandipsa\Desktop\Lab4\GPU_MatMul\GPU_MatMul.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.93

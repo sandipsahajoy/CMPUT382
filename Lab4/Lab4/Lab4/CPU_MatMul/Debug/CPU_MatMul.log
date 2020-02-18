@@ -1,0 +1,25 @@
+﻿Build started 2/5/2020 1:35:12 PM.
+     1>Project "C:\Users\sandipsa\Desktop\Lab4\CPU_MatMul\CPU_MatMul.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\Users\sandipsa\Desktop\Lab4\libwb\include /Zi /nologo /W3 /WX- /sdl /Od /D LAB_DEBUG /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sandipsa\Desktop\Lab4\Debug\CPU_MatMul.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\sandipsa\Desktop\Lab4\\libwb\lib\Debug wb.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sandipsa\Desktop\Lab4\Debug\CPU_MatMul.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sandipsa\Desktop\Lab4\Debug\CPU_MatMul.lib" /MACHINE:X64 Debug\main.obj
+     1>wb.lib(wbArg.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbArg.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbExit.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbExit.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbExport.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbExport.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbFile.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbFile.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbImage.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbImage.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbImport.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbImport.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbInit.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbInit.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbLogger.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbLogger.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbPPM.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbPPM.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbSolution.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbSolution.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(wbTimer.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(wbTimer.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+     1>wb.lib(json11.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'wb.lib(json11.obj)' or at 'C:\Users\sandipsa\Desktop\Lab4\Debug\vc120.pdb'; linking object as if no debug info
+         CPU_MatMul.vcxproj -> C:\Users\sandipsa\Desktop\Lab4\Debug\CPU_MatMul.exe
+     1>Done Building Project "C:\Users\sandipsa\Desktop\Lab4\CPU_MatMul\CPU_MatMul.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.54
