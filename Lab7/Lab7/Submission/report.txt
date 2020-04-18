@@ -1,0 +1,8 @@
+1. How many floating operations are being performed in your reduction kernel? (Don’t include assign as floating operation (=). So only the following: +, -, /, and *)
+Answer: numInputs * log(BlockSize)
+2. How many global memory reads are being performed by your kernel?
+Answer: numInputs * 2
+3. How many global memory writes are being performed by your kernel?
+Answer: numInputs/BlockSize
+4. How many times does a single thread block synchronize to reduce its portion of the array to a single value?
+Answer: log(blocksize) 

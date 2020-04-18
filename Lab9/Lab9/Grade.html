@@ -1,0 +1,200 @@
+<html>
+<head>
+	<script src="Marks.js"></script>
+	<script src="plotly-1.5.0.min.js"></script>
+</head>
+<body>
+	<p>Test Sizes:</p>
+	<ul>
+		<li>Test 0: 16</li>
+		<li>Test 1: 64</li>
+		<li>Test 2: 93</li>
+		<li>Test 3: 112</li>
+		<li>Test 4: 1033</li>
+		<li>Test 5: 1120</li>
+		<li>Test 6: 1233</li>
+		<li>Test 7: 4018</li>
+		<li>Test 8: 4098</li>
+		<li>Test 9: 9921</li>
+		<li>Test 10: 100000</li>
+		<li>Test 11: 1000000</li>
+	</ul>
+	<p>Plot of Test Runtime in Nanoseconds: (Lower is Better)</p>
+	<div id="plotDiv" style="width: 480px; height: 400px;"></div>
+<script>
+function correct(json) {
+	var correct = false;
+	json.forEach(function(obj, index) {
+		if (obj.type == "solution") {
+			correct = obj.data.correctq;
+		}
+	});
+
+	return correct;
+}
+
+function valid(json) {
+	var valid = true;
+	json.forEach(function(obj, index) {
+
+		if (obj.type == "Teaching Solution") {
+			valid = false;
+		}
+	});
+
+	return valid;
+}
+
+function printSection(section, total_percent, passed) {
+	passed = typeof passed !== 'undefined' ? passed : true;
+
+	var sectionDiv = document.createElement('div');
+	var sectionTitle = document.createTextNode(section.Section); 
+	sectionDiv.appendChild(sectionTitle);
+
+	var tests = section.Tests;
+
+	var testsTable = document.createElement('table');
+	testsTable.style.cssText = 'cellpadding: 30;';
+
+	var num_passed = 0;
+
+	tests.forEach(function(test, index) {
+		var testRow = document.createElement('tr');
+
+		var testTitle = document.createElement('td');
+		testTitle.appendChild(document.createTextNode(test.Test + ": "));
+
+		var pass = document.createElement('td');
+		var isCorrect = correct(test.Output);
+		var isValid = valid(test.Output);
+
+		if (isValid === true) {
+			if (isCorrect === true) {
+				if (!passed) {
+					pass.appendChild(document.createTextNode("Fail - Correct output but the speed up was not significant!"));
+				} else {
+					pass.appendChild(document.createTextNode("Pass"));
+					num_passed++;
+				}
+			} else if (isCorrect === false)
+				pass.appendChild(document.createTextNode("Fail - Incorrect output"));
+			else
+				pass.appendChild(document.createTextNode("Error - Program was unable to run or crashed"));
+		} else {
+			pass.appendChild(document.createTextNode("Fail - Used executable given to students"));
+		}
+
+		testRow.appendChild(testTitle);
+		testRow.appendChild(pass);
+		testsTable.appendChild(testRow);
+	});
+
+	var testRow = document.createElement('tr');
+	var testPrecTitle = document.createElement('td');
+	testPrecTitle.appendChild(document.createTextNode("Grade: "));
+	var testPrec = document.createElement('td');
+
+	var percent = Math.round((num_passed/tests.length)*total_percent*10)/10;
+
+	testPrec.appendChild(document.createTextNode(percent));
+	testRow.appendChild(testPrecTitle);
+	testRow.appendChild(testPrec);
+	testsTable.appendChild(testRow);
+
+	sectionDiv.appendChild(testsTable);
+
+	window.document.body.appendChild(sectionDiv);
+	window.document.body.appendChild(document.createElement('br'));
+
+	return percent;
+}
+
+function getTestTime(json) {
+	var time = 0;
+	json.forEach(function(obj, index) {
+		if (obj.type == "timer") {
+			var data = obj.data;
+			if (data.kind == "Compute") {
+				time = data.elapsed_time;
+			}
+		}
+	});
+
+	return time;
+}
+
+function compareTime(json) {
+	var GPU = json.Tests[0];
+	var OPT = json.Tests[1];
+
+	var GPU_time = getTestTime(GPU.Output);
+	var OPT_time = getTestTime(OPT.Output);
+
+	if (GPU_time <= 0 || OPT_time <= 0)
+		return -1;
+
+	return GPU_time/OPT_time;
+}
+
+
+function graph(json1, json2) {
+	var trace1 = {
+	  x: [],
+	  y: [],
+	  name: json1.Section,
+	  type: 'bar'
+	};
+
+	var trace2 = {
+	  x: [],
+	  y: [],
+	  name: json2.Section,
+	  type: 'bar'
+	};
+
+	var num_of_tests = json1.Tests.length
+
+	for (var i = 0; i < num_of_tests; i++) {
+		var name = json1.Tests[i].Test
+		var GPU_time = getTestTime(json1.Tests[i].Output)
+		var OPT_time = getTestTime(json2.Tests[i].Output)
+
+		trace1.x.push(name)
+		trace2.x.push(name)
+
+		trace1.y.push(GPU_time)
+		trace2.y.push(OPT_time)
+	}
+
+	var data = [trace1, trace2]
+
+	var layout = {barmode: 'group'}
+
+	Plotly.newPlot('plotDiv', data, layout)
+}
+var timeStampDiv = document.createElement('div')
+var timeStampTitle = document.createTextNode("Marks last run at: " + timestamp);
+timeStampDiv.appendChild(timeStampTitle)
+window.document.body.appendChild(timeStampDiv)
+
+var obj = JSON.parse(text)
+console.log(obj)
+
+var marks = obj.Marks
+
+printSection(marks[0], 0);
+var p = printSection(marks[1], 100);
+p = Math.round(p*10)/10
+
+
+var gradeDiv = document.createElement('div');
+var gradeTitle = document.createTextNode("Final Grade: " + p + "%"); 
+gradeDiv.appendChild(gradeTitle);
+window.document.body.appendChild(gradeDiv);
+
+graph(marks[0], marks[1])
+
+</script>
+</body>
+</html>
